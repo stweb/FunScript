@@ -30,6 +30,10 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Hokusai", "Hokusai\Hokusai.
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "MovieDatabase", "MovieDatabase\MovieDatabase.fsproj", "{C743294F-BA81-473B-A9F1-D95F5356D37A}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Pong", "Pong\Pong.fsproj", "{CCE73ABB-D217-470D-989C-C2B09CA29D2F}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Mobile", "Mobile\Mobile.fsproj", "{1D84A8E8-4138-4737-91F5-A39F6C57312B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -79,6 +83,14 @@ Global
 		{C743294F-BA81-473B-A9F1-D95F5356D37A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C743294F-BA81-473B-A9F1-D95F5356D37A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C743294F-BA81-473B-A9F1-D95F5356D37A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCE73ABB-D217-470D-989C-C2B09CA29D2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCE73ABB-D217-470D-989C-C2B09CA29D2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCE73ABB-D217-470D-989C-C2B09CA29D2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCE73ABB-D217-470D-989C-C2B09CA29D2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D84A8E8-4138-4737-91F5-A39F6C57312B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D84A8E8-4138-4737-91F5-A39F6C57312B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D84A8E8-4138-4737-91F5-A39F6C57312B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D84A8E8-4138-4737-91F5-A39F6C57312B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
