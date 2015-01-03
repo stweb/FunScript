@@ -6,9 +6,8 @@ open FunScript.TypeScript
 
 // loop through the provided array of tasks and create a div for each
 let addTasksToElement (elementSelector:string) tasks =
-    let tasks = tasks 
-                |> Array.mapi (fun index task -> "<div class='ui-widget-content draggable'>" + task + "</div>" |> box)
-    Globals.Dollar.Invoke(elementSelector).append(tasks) |> ignore
+    let el = Globals.Dollar.Invoke(elementSelector)
+    tasks |> Array.map (fun task -> el.append("<div class='ui-widget-content draggable'>" + task + "</div>")) |> ignore    
 
 // Create the initial array of To Do tasks and tasks that are already complete.
 let populateTasks () =
