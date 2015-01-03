@@ -389,14 +389,14 @@ let playLevel (keys:Keys, onLevelCompleted, onGameOver) =
     )
 
   let movePacman () =
-    let inputs =
-       [| if keys.IsPressed 81 (*q*) then 
+    let inputs = // WASD or Arrows
+       [| if keys.IsPressed 87 || keys.IsPressed 38 (* W up *) then 
             yield canGoUp (!x,!y), (0,-1)
-          if keys.IsPressed 65 (*a*) then 
+          if keys.IsPressed 65 || keys.IsPressed 40 (*down*) then 
             yield canGoDown (!x,!y), (0,1)
-          if keys.IsPressed 90 (*z*) then 
+          if keys.IsPressed 83 || keys.IsPressed 37 (*left*) then 
             yield canGoLeft (!x,!y), (-1,0)
-          if keys.IsPressed 88 (*x*) then 
+          if keys.IsPressed 68 || keys.IsPressed 39 (*right*) then 
             yield canGoRight (!x,!y), (1,0) |]
     let canGoForward =
       match !v with
