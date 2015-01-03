@@ -8,6 +8,8 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>Twitter</RootNamespace>
     <AssemblyName>FunScript.Example</AssemblyName>
+    <RootNamespace>FunScript.Example</RootNamespace>
+    <AssemblyName>Twitter</AssemblyName>
     <Name>FunScript.Example</Name>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <TargetFrameworkProfile />

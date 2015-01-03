@@ -40,7 +40,7 @@ type Program() =
       let settings = createEmpty<JQueryAjaxSettings>()
       settings.``success <-``(fun data _ _ -> callback(unbox data); null)
       settings.dataType <- "jsonp"
-      Globals.jQuery.ajax("http://search.twitter.com/search.json?q=" + searchText, settings)   
+      Globals.jQuery.ajax("https://api.twitter.com/1.1/search/tweets.json?q=" + searchText, settings)   
    
    let updateTweets map =
       clearMap()
