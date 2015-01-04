@@ -2,6 +2,8 @@
 module Program
 
 open FunScript
+open FunScript.TypeScript
+
 let j (selector : string) = Globals.Dollar.Invoke(selector)
 let (?) jq name = jq("#" + name)
 let hello () =  Globals.window.alert("Hello world!")
@@ -18,6 +20,11 @@ type Async =
   static member AwaitHTMLEvent(f : ('T -> obj) -> unit) : Async<'T> = 
     Async.FromContinuations(fun (cont, econt, ccont) -> f (fun v -> cont v;obj()))
 
+  static member AwaitNextButton =
+      Async.AwaitJQueryEvent(fun f -> j?next.click(fun x -> 
+          Globals.console.log "next"
+          f x))
+    
 let paintInCol (ctx:CanvasRenderingContext2D) = 
    let fCol = ref 0.
    fun (imgs : ImageData array) -> 
@@ -74,7 +81,7 @@ let main() =
                  let ctx = canvas.getContext_2d()
                  canvas, paintInCol ctx, ctx.createImageData
 
-
+              let! v = Async.AwaitNextButton 
               let elem = j?nRepetition
               let n = elem._val() :?> float
               canvas.width <-  max canvas.width  (n*(d.width+10.))
@@ -93,25 +100,23 @@ let main() =
 
               displaystack [| (newImg d).from1Bit(original) |]
               displaystack (copies      |> Array.map (fun data -> (newImg d).from1Bit(data)))
-              let! v = Async.AwaitJQueryEvent(fun f -> j?next.click(f))
+              let! v = Async.AwaitNextButton // JQueryEvent(fun f -> j?next.click(fun x -> f x))
 
               displaystack (transmitted |> Array.map (fun data -> (newImg d).from1Bit(data)))
-              let! v = Async.AwaitJQueryEvent(fun f -> j?next.click(f))
+              let! v = Async.AwaitNextButton // JQueryEvent(fun f -> j?next.click(fun x -> f x))
            
               displaystack [| (newImg d).from1Bit(decoded);|]
-              let! v = Async.AwaitJQueryEvent(fun f -> j?next.click(f))
-
+              let! v = Async.AwaitNextButton // JQueryEvent(fun f -> j?next.click(fun x -> f x))
+    
               do! repetitionEncoder () 
               } 
           
           
    async {
-       do! Async.AwaitJQueryEvent(j?document.ready)
+       do! Async.AwaitJQueryEvent(fun o -> j?document.ready(unbox<Function> o))
        Async.StartImmediate(repetitionEncoder ())
      } |> Async.StartImmediate
     
-
-
    ()
 
 
