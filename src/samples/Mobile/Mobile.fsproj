@@ -36,46 +36,6 @@
     <DocumentationFile>bin\Release\FunScript.Test.XML</DocumentationFile>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="FSharp.Core, Version=$(TargetFSharpCoreVersion), Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="FunScript">
-      <HintPath>..\..\main\FunScript\bin\Debug\FunScript.dll</HintPath>
-    </Reference>
-    <Reference Include="FunScript.Interop">
-      <HintPath>..\..\main\FunScript\bin\Debug\FunScript.Interop.dll</HintPath>
-    </Reference>
-    <Reference Include="FunScript.TypeScript.Binding.jquery">
-      <HintPath>..\packages\FunScript.TypeScript.Binding.jquery.1.1.0.37\lib\net40\FunScript.TypeScript.Binding.jquery.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="FunScript.TypeScript.Binding.jquerymobile">
-      <HintPath>..\packages\FunScript.TypeScript.Binding.jquerymobile.1.1.0.37\lib\net40\FunScript.TypeScript.Binding.jquerymobile.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="FunScript.TypeScript.Binding.lib">
-      <HintPath>..\packages\FunScript.TypeScript.Binding.lib.1.1.0.37\lib\net40\FunScript.TypeScript.Binding.lib.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="mscorlib" />
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Numerics" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="index.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <Compile Include="..\Shared\Launcher.fs">
-      <Link>Shared\Launcher.fs</Link>
-    </Compile>
-    <Compile Include="..\Shared\Extensions.fs">
-      <Link>Shared\Extensions.fs</Link>
-    </Compile>
-    <Compile Include="Page.fs" />
-    <None Include="App.config" />
-  </ItemGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>
   </PropertyGroup>
@@ -92,6 +52,47 @@
     </Otherwise>
   </Choose>
   <Import Project="$(FSharpTargetsPath)" Condition="Exists('$(FSharpTargetsPath)')" />
+  <ItemGroup>
+    <None Include="index.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <Compile Include="..\Shared\Launcher.fs">
+      <Link>Shared\Launcher.fs</Link>
+    </Compile>
+    <Compile Include="..\Shared\Extensions.fs">
+      <Link>Shared\Extensions.fs</Link>
+    </Compile>
+    <Compile Include="Page.fs" />
+    <None Include="App.config" />
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="FSharp.Core, Version=$(TargetFSharpCoreVersion), Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FunScript">
+      <HintPath>..\..\main\FunScript\bin\Debug\FunScript.dll</HintPath>
+    </Reference>
+    <Reference Include="FunScript.Interop">
+      <HintPath>..\..\main\FunScript\bin\Debug\FunScript.Interop.dll</HintPath>
+    </Reference>
+    <Reference Include="FunScript.TypeScript.Binding.jquery">
+      <HintPath>$(SolutionDir)packages\FunScript.TypeScript.Binding.jquery.1.1.0.37\lib\net40\FunScript.TypeScript.Binding.jquery.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FunScript.TypeScript.Binding.jquerymobile">
+      <HintPath>$(SolutionDir)packages\FunScript.TypeScript.Binding.jquerymobile.1.1.0.37\lib\net40\FunScript.TypeScript.Binding.jquerymobile.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FunScript.TypeScript.Binding.lib">
+      <HintPath>$(SolutionDir)packages\FunScript.TypeScript.Binding.lib.1.1.0.37\lib\net40\FunScript.TypeScript.Binding.lib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
+  </ItemGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

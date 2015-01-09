@@ -43,25 +43,25 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="IKVM.OpenJDK.Core">
-      <HintPath>..\..\packages\IKVM-WithExes.7.3.4830.1\tools\IKVM.OpenJDK.Core.dll</HintPath>
+      <HintPath>$(SolutionDir)packages\IKVM-WithExes.7.3.4830.1\tools\IKVM.OpenJDK.Core.dll</HintPath>
     </Reference>
     <Reference Include="IKVM.OpenJDK.Jdbc">
-      <HintPath>..\..\packages\IKVM-WithExes.7.3.4830.1\tools\IKVM.OpenJDK.Jdbc.dll</HintPath>
+      <HintPath>$(SolutionDir)packages\IKVM-WithExes.7.3.4830.1\tools\IKVM.OpenJDK.Jdbc.dll</HintPath>
     </Reference>
     <Reference Include="IKVM.OpenJDK.Management">
-      <HintPath>..\..\packages\IKVM-WithExes.7.3.4830.1\tools\IKVM.OpenJDK.Management.dll</HintPath>
+      <HintPath>$(SolutionDir)packages\IKVM-WithExes.7.3.4830.1\tools\IKVM.OpenJDK.Management.dll</HintPath>
     </Reference>
     <Reference Include="IKVM.OpenJDK.Text">
-      <HintPath>..\..\packages\IKVM-WithExes.7.3.4830.1\tools\IKVM.OpenJDK.Text.dll</HintPath>
+      <HintPath>$(SolutionDir)packages\IKVM-WithExes.7.3.4830.1\tools\IKVM.OpenJDK.Text.dll</HintPath>
     </Reference>
     <Reference Include="IKVM.OpenJDK.Util">
-      <HintPath>..\..\packages\IKVM-WithExes.7.3.4830.1\tools\IKVM.OpenJDK.Util.dll</HintPath>
+      <HintPath>$(SolutionDir)packages\IKVM-WithExes.7.3.4830.1\tools\IKVM.OpenJDK.Util.dll</HintPath>
     </Reference>
     <Reference Include="IKVM.Runtime">
-      <HintPath>..\..\packages\IKVM-WithExes.7.3.4830.1\tools\IKVM.Runtime.dll</HintPath>
+      <HintPath>$(SolutionDir)packages\IKVM-WithExes.7.3.4830.1\tools\IKVM.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="compiler">
-      <HintPath>..\..\packages\GoogleClosureCompiler\compiler.dll</HintPath>
+      <HintPath>$(SolutionDir)packages\GoogleClosureCompiler\compiler.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib" />
     <Reference Include="System" />

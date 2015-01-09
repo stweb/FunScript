@@ -1,38 +1,38 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30501.0
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{DEA69E61-D766-42F3-85A5-88A698725688}"
 	ProjectSection(SolutionItems) = preProject
-		..\Docs\build.fsx = ..\Docs\build.fsx
+		Docs\build.fsx = Docs\build.fsx
 	EndProjectSection
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "WorldBank", "WorldBank\WorldBank.fsproj", "{A4799ED1-4228-4B1D-8ACB-61293F90B07E}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "WorldBank", "samples\WorldBank\WorldBank.fsproj", "{A4799ED1-4228-4B1D-8ACB-61293F90B07E}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "SimpleAsync", "SimpleAsync\SimpleAsync.fsproj", "{E1D45250-A24A-4D26-BFBF-BF93AB5F45E5}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "SimpleAsync", "samples\SimpleAsync\SimpleAsync.fsproj", "{E1D45250-A24A-4D26-BFBF-BF93AB5F45E5}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Tutorial", "Tutorial\Tutorial.fsproj", "{64D64D70-C665-4A7B-BF83-9635485578E0}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Tutorial", "samples\Tutorial\Tutorial.fsproj", "{64D64D70-C665-4A7B-BF83-9635485578E0}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Mandelbrot", "Mandelbrot\Mandelbrot.fsproj", "{D5231916-12DD-42ED-A0F3-10C2A8C6A807}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Mandelbrot", "samples\Mandelbrot\Mandelbrot.fsproj", "{D5231916-12DD-42ED-A0F3-10C2A8C6A807}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Canvas", "Canvas\Canvas.fsproj", "{761CE569-EDDC-4163-95B4-30ADE1F4BD07}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Canvas", "samples\Canvas\Canvas.fsproj", "{761CE569-EDDC-4163-95B4-30ADE1F4BD07}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Twitter", "Twitter\Twitter.fsproj", "{63EAF56E-2390-453D-BD73-B79E85CF0DE0}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Twitter", "samples\Twitter\Twitter.fsproj", "{63EAF56E-2390-453D-BD73-B79E85CF0DE0}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "jQueryUI", "jQueryUI\jQueryUI.fsproj", "{BBC1F692-F6FF-4406-BD43-25C7756C7A01}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "jQueryUI", "samples\jQueryUI\jQueryUI.fsproj", "{BBC1F692-F6FF-4406-BD43-25C7756C7A01}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Mario", "Mario\Mario.fsproj", "{C0EC7DDC-91B9-47F1-BF4C-DEF78715F7C4}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Mario", "samples\Mario\Mario.fsproj", "{C0EC7DDC-91B9-47F1-BF4C-DEF78715F7C4}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "PacMan", "Pacman\PacMan.fsproj", "{1CD63889-D724-46FA-B055-7BDCFEDC1541}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "PacMan", "samples\Pacman\PacMan.fsproj", "{1CD63889-D724-46FA-B055-7BDCFEDC1541}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Hokusai", "Hokusai\Hokusai.fsproj", "{C63D4CBA-1907-4775-B694-8E35FAE8D5D5}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Hokusai", "samples\Hokusai\Hokusai.fsproj", "{C63D4CBA-1907-4775-B694-8E35FAE8D5D5}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "MovieDatabase", "MovieDatabase\MovieDatabase.fsproj", "{C743294F-BA81-473B-A9F1-D95F5356D37A}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "MovieDatabase", "samples\MovieDatabase\MovieDatabase.fsproj", "{C743294F-BA81-473B-A9F1-D95F5356D37A}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Pong", "Pong\Pong.fsproj", "{CCE73ABB-D217-470D-989C-C2B09CA29D2F}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Pong", "samples\Pong\Pong.fsproj", "{CCE73ABB-D217-470D-989C-C2B09CA29D2F}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Mobile", "Mobile\Mobile.fsproj", "{1D84A8E8-4138-4737-91F5-A39F6C57312B}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Mobile", "samples\Mobile\Mobile.fsproj", "{1D84A8E8-4138-4737-91F5-A39F6C57312B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
