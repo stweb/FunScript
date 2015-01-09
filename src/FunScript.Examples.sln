@@ -30,7 +30,7 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Hokusai", "samples\Hokusai\
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "MovieDatabase", "samples\MovieDatabase\MovieDatabase.fsproj", "{C743294F-BA81-473B-A9F1-D95F5356D37A}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Pong", "samples\Pong\Pong.fsproj", "{CCE73ABB-D217-470D-989C-C2B09CA29D2F}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "PongClock", "samples\Pong\PongClock.fsproj", "{CCE73ABB-D217-470D-989C-C2B09CA29D2F}"
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Mobile", "samples\Mobile\Mobile.fsproj", "{1D84A8E8-4138-4737-91F5-A39F6C57312B}"
 EndProject

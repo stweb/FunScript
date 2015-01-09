@@ -8,8 +8,8 @@
     <ProjectGuid>{cce73abb-d217-470d-989c-c2b09ca29d2f}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>Canvas</RootNamespace>
-    <AssemblyName>Pong</AssemblyName>
-    <Name>Mario.FunScript</Name>
+    <AssemblyName>PongClock</AssemblyName>
+    <Name>PongClock</Name>
     <ProductVersion>10.0.0</ProductVersion>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <TargetFrameworkProfile />
