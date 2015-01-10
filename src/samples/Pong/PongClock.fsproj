@@ -11,6 +11,8 @@
     <AssemblyName>PongClock</AssemblyName>
     <Name>PongClock</Name>
     <ProductVersion>10.0.0</ProductVersion>
+    <AssemblyName>Pong</AssemblyName>
+    <Name>Mario.FunScript</Name>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <TargetFrameworkProfile />
     <TargetFSharpCoreVersion>4.3.1.0</TargetFSharpCoreVersion>
@@ -27,6 +29,7 @@
     <DocumentationFile>
     </DocumentationFile>
     <Prefer32Bit>true</Prefer32Bit>
+    <Externalconsole>true</Externalconsole>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
