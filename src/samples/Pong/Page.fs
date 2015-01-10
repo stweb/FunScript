@@ -1,11 +1,10 @@
 ﻿// ---
 // header: Pong
 // tagline: Pong Clock is a program that represents the current system time through an epic game two dueling paddles.
-// popup-style: width:580px
 //
 // Copyright (C) 2006       Ben Peck (original java version)
 // Copyright (C) 2007-2014  Stefan Weber (C# .net port)
-// Copyright (C) 2014       Stefan Weber (F# .net port) 
+// Copyright (C) 2015       Stefan Weber (F# .net port) 
 
 [<ReflectedDefinition>]
 module Program
@@ -52,6 +51,9 @@ let pix3 (_, _, c) = (c = 1)
 // charToInt c = charToInt 'x' in the unit tests (which works in Jint too.)
 [<FunScript.JS; FunScript.JSEmit("return {0}.charCodeAt(0);")>]
 let charToInt (c:char) : int = int c 
+
+[<JS; JSEmit("return Math.random();")>]
+let random () : float = failwith "never"
  
 // ----------------------------------------------------------------------------
 // The rest of the code contains the commented web site content
@@ -77,7 +79,7 @@ type Rect = float * float * float * float
 
 // function intersectRect(r1, r2) {  return !(r2.left > r1.right || r2.right < r1.left || r2.top > r1.bottom || r2.bottom < r1.top); }
 let intersect (r1x, r1y, r1w, r1h) (r2x, r2y, r2w, r2h) = 
-    not (r2x > r1x + r1w || r2x + r2w < r1x || r2y > r1y + r1w || r2y + r2w < r1y)
+    not (r2x > r1x + r1w || r2x + r2w < r1x || r2y > r1y + r1h || r2y + r2h < r1y)
 
 //let intersects x y w h = true
 let hit (b:Ball) (p:Paddle) =  
@@ -93,10 +95,12 @@ let score (state:State) = (state.ball.x > width) || (state.ball.x < -block)
 let bounce (state:State) (b:Ball) = 
   if b.y < 0. || b.y > height - block then
     {b with vy = -b.vy }    
-  elif hit b state.p1 || hit b state.p2 then
-    {b with vx = -b.vx }    
-  else
-    b
+    elif hit b state.p1 then
+        {b with vx = -b.vx + 2.0 * (random() - 0.5) }        
+    elif hit b state.p2 then
+        {b with vx = -b.vx + 2.0 * (random() - 0.5) }    
+    else
+        b
 
 let next (off:bool) (b:Ball) =
     if off then    
@@ -104,9 +108,24 @@ let next (off:bool) (b:Ball) =
     else
     b
    
+//generate a speed at which the paddle will move based on how far away the ball is
+let speed (ypaddle:float) (yball:float) =
+    let difference = abs (ypaddle - yball)
+
+    if difference < 1. && difference > -1. then
+        0.
+    elif ypaddle < yball then
+        difference / 3.
+    else
+        -difference / 3.
+   
+// only react when ball is in range
 let moveto (b:Ball) (p:Paddle) =
-  {p with vy = if (p.y < b.y) then block else -block ;
-          y = if (p.isleft && b.x < 200. || (not (p.isleft)) && b.x > 300.) then p.y + p.vy else p.y}
+    let wait = (p.isleft && b.x > (width * 0.6) || (not (p.isleft)) && b.x < (width * 0.4))
+    {p with vy = if wait then 
+                    if p.y < height/2.0 then 1. else -1. // slow down
+                 else speed p.y b.y;
+            y  = p.y + p.vy}
 
 let drawRect x y =
     let rect = x, y, block+1., block+1.
@@ -125,7 +144,7 @@ let drawDigit x y (n:char) =
 let drawNumber x y (num:string) =
     if num.Length = 2 then // TODO leading 0 
         drawDigit (block*4. + x) y num.[1] |> ignore
-    if num.Length = 1 then // TODO leading 0 
+    if num.Length >= 1 then // TODO leading 0 
         drawDigit x y num.[0] |> ignore
     ()
 
